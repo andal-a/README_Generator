@@ -1,3 +1,4 @@
+//Require Dependencies
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
@@ -111,17 +112,19 @@ async function main(){
         name: "test"
     }
     ])
-
+    
     const collabGitUsernames = userResponse.collabUsernames;
     const collabGitNamesArray = collabGitUsernames.split(",");
     var resultContributor;
+    //Creates
     for (i=0; i<collabGitNamesArray.length; i++){
         var collabGitNames = collabGitNamesArray[i]
         var collabUrl = userResponse.collabGitSite;
         var collabContact = userResponse.collabEmail;
         var resultContributor = (`[${collabGitNames}] [Email](mailto:${collabContact}) [GitHub Profile](${collabUrl})`);
     }
-var result = (`
+ //Appends user responses to README template
+var responses = (`
 
 # ${userResponse.title}
 
@@ -159,7 +162,8 @@ Send any questions, comments, or issues to:
 
 `)
 //Function generates README.md file
-var writeResult = fs.writeFileSync(path.join('README.md'), result )
+var createReadMe = fs.writeFileSync(path.join('readmeExample.md'), responses )
+//
 console.log("Congratulations! Your README file has been generated!")
 }
 main();
