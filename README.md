@@ -12,22 +12,29 @@
 * [Questions](#Questions)
 
 ## Description
-An application utilizing the command line to easily generate README files based on the user's input. 
+An application for easily generating a README file through the command line based on a series of prompts answered by the user.
+![ReadmeGeneratorPreview](readme.gif)
 
 ## Installation
-1. Clone the repository. 2. Open terminal 3. Navigate to necessary directory. 4. Run ``` npm install ```
+1. Clone the repository. 
+2. Open terminal 
+3. Navigate to necessary directory. 
+4. Run ``` npm install ```
 
 ## Usage
-1. Run node in terminal. 2. Answer the provided prompts. 3. Once finished, a custom README.md file will be generated.
+1. Run node in terminal. 
+2. Answer the provided prompts. 
+3. Once finished, a custom README.md file will be generated.
+
+```
+node index.js
+```
 
 ## License
  
-
 ## Tests
 
-
 ## Contributors
-[FakeUserName] [Email](mailto:example@email.com) [GitHub Profile](https://www.github.com/faleUserName)
 
 ## Questions
 Send any questions, comments, or issues to:
