@@ -1,6 +1,5 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const fetch = require("node-fetch");
 const path = require("path");
 
 //User Prompts
@@ -96,7 +95,15 @@ async function main(){
     },
     {   type: "input",
         message: "What is your collaborator's GitHub username (if mulitple seperate names with comma)?",
-        name: "collabUsername"
+        name: "collabUsernames"
+    },
+    {   type: "input",
+        message: "What is the link to your collaborator's GitHub Profile (if mulitple seperate names with comma)?",
+        name: "collabGitSite"
+    },
+    {   type: "input",
+        message: "What is your collaborator's email (if mulitple seperate names with comma)?",
+        name: "collabEmail"
     },
     {
         type: "input",
@@ -105,24 +112,25 @@ async function main(){
     }
     ])
 
-    const gitNames = userResponse.username;
-    const collabGitName = userResponse.collabUsername;
-    // fetching data from git
-    // user
-        // contributor
-    const collabNamesArray = collabGitName.split(",");
-    console.log(collabNamesArray);
-
+    const collabGitUsernames = userResponse.collabUsernames;
+    const collabGitNamesArray = collabGitUsernames.split(",");
+    var resultContributor;
+    for (i=0; i<collabGitNamesArray.length; i++){
+        var collabGitNames = collabGitNamesArray[i]
+        var collabUrl = userResponse.collabGitSite;
+        var collabContact = userResponse.collabEmail;
+        var resultContributor = (`[${collabGitNames}] [Email](mailto:${collabContact}) [GitHub Profile](${collabUrl})`);
+    }
 var result = (`
 
 # ${userResponse.title}
 
 ## Table of Contents
 * [Description](#Description)
-* [Installation](#Unstallation)
+* [Installation](#Installation)
 * [Usage](#Usage)
 * [License](#License)
-* [Tests Instructions](#Tests)
+* [Test Instructions](#Tests)
 * [Contribute](#Contribute)
 * [Questions](#Questions)
 
@@ -136,24 +144,23 @@ ${userResponse.installation}
 ${userResponse.usage}
 
 ## License
-${userResponse.license}
+${userResponse.license} ${userResponse.licenseUrl}
 
 ## Tests
 ${userResponse.test}
 
 ## Contributors
-${userResponse.contribute}
+${resultContributor}
 
 ## Questions
 Send any questions, comments, or issues to:
-\n[${userResponse.username}]
-\n[Email](mailto:${userResponse.email})
+\n[${userResponse.username}] [Email](mailto:${userResponse.email})
 \n[GitHub Profile](${userResponse.gitUrl})
 
 `)
-    //Function generates README.md file
-    var writeResult = fs.writeFileSync(path.join('README.md'), result )
-    console.log("Your README file has been generated!")
-    }
+//Function generates README.md file
+var writeResult = fs.writeFileSync(path.join('README.md'), result )
+console.log("Congratulations! Your README file has been generated!")
+}
 main();
 

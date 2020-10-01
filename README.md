@@ -4,37 +4,35 @@
 
 ## Table of Contents
 * [Description](#Description)
-* [Installation](#Unstallation)
+* [Installation](#Installation)
 * [Usage](#Usage)
 * [License](#License)
-* [Tests Instructions](#Tests)
+* [Test Instructions](#Tests)
 * [Contribute](#Contribute)
 * [Questions](#Questions)
 
 ## Description
-An application for easily creating README.md files through the command line based on the user's input.
+An application utilizing the command line to easily generate README files based on the user's input. 
 
 ## Installation
-Clone the repository and run ```npm install```
+1. Clone the repository. 2. Open terminal 3. Navigate to necessary directory. 4. Run ``` npm install ```
 
 ## Usage
-In the project directory run ```node index.js``` and answer each prompt. Once completed, a README file will be generated.
+1. Run node in terminal. 2. Answer the provided prompts. 3. Once finished, a custom README.md file will be generated.
 
 ## License
-
+ 
 
 ## Tests
 
 
 ## Contributors
-undefined
+[FakeUserName] [Email](mailto:example@email.com) [GitHub Profile](https://www.github.com/faleUserName)
 
 ## Questions
 Send any questions, comments, or issues to:
 
-[andal-a]
-
-[Email](mailto:aandal77@gmail.com)
+[andal-a] [Email](mailto:aandal77@gmail.com)
 
 [GitHub Profile](https://www.github.com/andal-a)
 
