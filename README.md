@@ -33,5 +33,5 @@ An application for easily generating README files through the commandline by ini
 ## Questions
 Direct any questions, comments, or issues to:
 
-[andal-a] [Email](mailto:aandal77@gmail.com) |[GitHub Profile](https://www.github.com/andal-a)
+[andal-a] [Email](mailto:aandal77@gmail.com) | [GitHub Profile](https://www.github.com/andal-a)
 
