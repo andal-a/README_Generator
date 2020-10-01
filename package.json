@@ -1,0 +1,28 @@
+{
+  "name": "readme_generator",
+  "version": "1.0.0",
+  "description": "An application for generating README.md files via the command line",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andal-a/README_Generator.git"
+  },
+  "keywords": [
+    "readme",
+    "generator"
+  ],
+  "author": "\"Amor Andal\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andal-a/README_Generator/issues"
+  },
+  "homepage": "https://github.com/andal-a/README_Generator#readme",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "inquirer": "^7.3.3",
+    "node-fetch": "^2.6.1"
+  }
+}
