@@ -121,9 +121,9 @@ async function main(){
         var collabGitNames = collabGitNamesArray[i]
         var collabUrl = userResponse.collabGitSite;
         var collabContact = userResponse.collabEmail;
-        var resultContributor = (`[${collabGitNames}] [Email](mailto:${collabContact}) [GitHub Profile](${collabUrl})`);
+        var resultContributor = (`[${collabGitNames}] [Email](mailto:${collabContact}) | [GitHub Profile](${collabUrl})`);
     }
- //Appends user responses to README template
+ //Appends user input values to README template
 var responses = (`
 
 # ${userResponse.title}
@@ -156,15 +156,12 @@ ${userResponse.test}
 ${resultContributor}
 
 ## Questions
-Send any questions, comments, or issues to:
-\n[${userResponse.username}] [Email](mailto:${userResponse.email})
-\n[GitHub Profile](${userResponse.gitUrl})
+Direct any questions, comments, or issues to:
+\n[${userResponse.username}] [Email](mailto:${userResponse.email}) | [GitHub Profile](${userResponse.gitUrl})
 
 `)
-//Function generates README.md file
+//Function generates README file
 var createReadMe = fs.writeFileSync(path.join('readmeExample.md'), responses )
-//
 console.log("Congratulations! Your README file has been generated!")
 }
 main();
-
